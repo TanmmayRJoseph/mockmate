@@ -1,0 +1,17 @@
+// Sample env file
+// 1. rename this to .env
+// 2.fill out all values with yours credentials
+//====================================================
+
+
+//postgres neon url for postgres DB
+DATABASE_URL=
+
+//JWT SECRET jwt auth
+JWT_SECRET=
+
+//Google gemini api for questions generation
+GOOGLE_API_KEY=
+
+//Eleven labs api key for text to audio feature
+ELEVEN_LABS_API_KEY=

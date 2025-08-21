@@ -1,103 +1,112 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Brain, Mic, BarChart3 } from "lucide-react";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Navbar */}
+      <header className="flex items-center justify-between px-6 py-4 border-b bg-white sticky top-0 z-50">
+        <h1 className="text-2xl font-bold text-gray-800">Mock-Mate</h1>
+        <nav className="flex gap-4">
+          <Link href="/pages/login">
+            <Button variant="ghost">Login</Button>
+          </Link>
+          <Link href="/pages/register">
+            <Button>Get Started</Button>
+          </Link>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="text-center px-6 py-20">
+        <div className="text-4xl md:text-6xl font-bold text-gray-900">
+          Ace Your Next Interview with{" "}
+          <span className="text-indigo-600">AI-Powered Coaching</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+          Get personalized interview questions, real-time feedback on your
+          answers, and track your improvement with AI.
+        </p>
+        <div className="mt-8 flex justify-center gap-4">
+          <Link href="/pages/register">
+            <Button size="lg">Start Practicing</Button>
+          </Link>
+          <Link href="/pages/login">
+            <Button size="lg" variant="outline">
+              Login
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="px-6 py-16 bg-gray-50">
+        <h3 className="text-3xl font-semibold text-center text-gray-900">
+          Why InterviewCoachAI?
+        </h3>
+        <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
+          <Card className="shadow-md">
+            <CardContent className="p-6 text-center">
+              <Brain className="mx-auto h-10 w-10 text-indigo-600" />
+              <h4 className="mt-4 text-xl font-semibold">
+                AI-Generated Questions
+              </h4>
+              <p className="mt-2 text-gray-600">
+                Practice with realistic, role-specific interview questions
+                powered by AI.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-md">
+            <CardContent className="p-6 text-center">
+              <Mic className="mx-auto h-10 w-10 text-indigo-600" />
+              <h4 className="mt-4 text-xl font-semibold">
+                Answer in Text or Audio
+              </h4>
+              <p className="mt-2 text-gray-600">
+                Improve clarity and confidence by practicing both written and
+                spoken answers.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-md">
+            <CardContent className="p-6 text-center">
+              <BarChart3 className="mx-auto h-10 w-10 text-indigo-600" />
+              <h4 className="mt-4 text-xl font-semibold">
+                Track Your Progress
+              </h4>
+              <p className="mt-2 text-gray-600">
+                Get detailed insights on tone, clarity, and keywords to measure
+                improvement.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-20 text-center">
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+          Ready to Land Your Dream Job?
+        </h3>
+        <p className="mt-4 text-lg text-gray-600">
+          Sign up today and start practicing with AI-powered interview coaching.
+        </p>
+        <div className="mt-6">
+          <Link href="/pages/register">
+            <Button size="lg">Get Started for Free</Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t bg-white px-6 py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} InterviewCoachAI. All rights reserved.
       </footer>
-    </div>
+    </main>
   );
 }
