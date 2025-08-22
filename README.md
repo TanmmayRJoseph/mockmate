@@ -236,4 +236,4 @@ If you have any questions or need help, please:
 
 ---
 
-**Built with ❤️ using Next.js, React, and AI**
+**Built with Intelligence using Next.js, React, and AI**
